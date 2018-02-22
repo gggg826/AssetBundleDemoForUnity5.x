@@ -1,5 +1,5 @@
 using UnityEngine;
-#if UNITY_5_3 || UNITY_5_4
+#if UNITY_5_3_OR_NEWER
 using UnityEngine.SceneManagement;
 #endif
 #if ENABLE_IOS_ON_DEMAND_RESOURCES
@@ -242,8 +242,8 @@ namespace AssetBundles
             LoadedAssetBundle bundle = AssetBundleManager.GetLoadedAssetBundle(m_AssetBundleName, out m_DownloadingError);
             if (bundle != null)
             {
-#if UNITY_5_3 || UNITY_5_4
-                m_Request = SceneManager.LoadSceneAsync(m_LevelName, m_IsAdditive ? LoadSceneMode.Additive : LoadSceneMode.Single);
+#if UNITY_5_3_OR_NEWER
+				m_Request = SceneManager.LoadSceneAsync(m_LevelName, m_IsAdditive ? LoadSceneMode.Additive : LoadSceneMode.Single);
 #else
                 if (m_IsAdditive)
                     m_Request = Application.LoadLevelAdditiveAsync(m_LevelName);
