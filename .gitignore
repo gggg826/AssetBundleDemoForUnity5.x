@@ -221,6 +221,7 @@ Src/ShaderlabVS/Shaderlab.lst
 Src/ShaderlabVS/Shaderlab.lex
 
 #Unity
+[Aa]ssetBundles
 [Ll]ibrary
 [Tt]emp
 *.sln
