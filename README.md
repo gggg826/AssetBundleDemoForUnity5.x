@@ -1,0 +1,3 @@
+Assetbundle打包、加载模块
+
+依据官方AssetBundleManager扩展而来
