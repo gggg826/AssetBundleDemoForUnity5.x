@@ -1,9 +1,5 @@
 using UnityEngine;
 
-#if UNITY_EDITOR
-
-#endif
-
 using System;
 using System.Collections.Generic;
 
@@ -68,12 +64,7 @@ namespace AssetBundles
 		private static string m_BaseDownloadingURL = "";
 		private static string[] m_ActiveVariants = { };
 		private static AssetBundleManifest m_AssetBundleManifest = null;
-
-		//#if UNITY_EDITOR
-		//		private static int m_SimulateAssetBundleInEditor = -1;
-		//		private const string kSimulateAssetBundles = "SimulateAssetBundles";
-		//#endif
-
+		
 		private static Dictionary<string, LoadedAssetBundle> m_LoadedAssetBundles = new Dictionary<string, LoadedAssetBundle>();
 		private static Dictionary<string, string> m_DownloadingErrors = new Dictionary<string, string>();
 		private static List<string> m_DownloadingBundles = new List<string>();
