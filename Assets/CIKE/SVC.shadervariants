@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!200 &20000000
+ShaderVariantCollection:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SVC
+  m_Shaders:
+    data:
+      first: {fileID: 4800000, guid: 4df3fa02ecb4e5b42aa065b3ca9a4972, type: 3}
+      second:
+        variants:
+        - keywords: 
+          passType: 1
+        - keywords: SPOT
+          passType: 1
+        - keywords: POINT
+          passType: 1
+        - keywords: FOG_LINEAR
+          passType: 1
+        - keywords: FOG_LINEAR SPOT
+          passType: 1
+        - keywords: FOG_LINEAR POINT
+          passType: 1
+        - keywords: FOG_EXP
+          passType: 1
+        - keywords: FOG_EXP SPOT
+          passType: 1

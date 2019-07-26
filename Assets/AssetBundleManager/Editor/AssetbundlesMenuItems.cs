@@ -79,5 +79,35 @@ namespace AssetBundles
 
             BuildScript.BuildAssetBundles(assetBundleBuilds.ToArray());
         }
+
+        [MenuItem("Assets/AssetBundles/Mark AssetBundles name")]
+        private static void MarkBundlesName()
+        {
+            // Get all selected *assets*
+            var assets = Selection.objects.Where(o => !string.IsNullOrEmpty(AssetDatabase.GetAssetPath(o))).ToArray();
+
+            int i = 0;
+            int total = assets.Length;
+            foreach (var o in assets)
+            {
+
+                EditorUtility.DisplayProgressBar("Mark Bundle Name", o.name, (float)i / total);
+                var assetPath =  AssetDatabase.GetAssetPath(o);
+                var importer = AssetImporter.GetAtPath(assetPath);
+
+                if (importer == null)
+                {
+                    continue;
+                }
+
+                string bundleName = (/*EditorUserBuildSettings.activeBuildTarget + "/" + */System.IO.Path.GetFileNameWithoutExtension(assetPath)).ToLower();
+                importer.assetBundleName = bundleName;
+                importer.assetBundleVariant = "data";
+                i++;
+            }
+            EditorUtility.ClearProgressBar();
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
     }
 }
